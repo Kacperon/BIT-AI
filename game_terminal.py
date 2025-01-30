@@ -2,7 +2,7 @@ import class444 as c
 from minmax import MinimaxPlayer
 
 if __name__ == "__main__":
-    game = c.Game(4)
+    game = c.Game_class(4)
     player1 = MinimaxPlayer(depth=2)
     while True:
         if game.get_position()[0] == []:

@@ -8,7 +8,7 @@ def cmp(game):
 # def cmp(game):
 #     return game.get_cards_quantity(1)-game.get_cards_quantity(2)
 
-class MinimaxPlayer:
+class MinimaxabPlayer:
     def __init__(self, depth):
         self.depth = depth
         self.cmp=cmp

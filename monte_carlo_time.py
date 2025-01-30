@@ -3,6 +3,10 @@ import random
 import time
 
 def cmp(game):
+    if game.get_cards_quantity(1)==0:
+        return 1000
+    if game.get_cards_quantity(2)==0:
+        return -1000
     return (game.get_cards_quantity(1)-game.get_cards_quantity(2))/(game.get_cards_quantity(1)+game.get_cards_quantity(2))
 
 
@@ -38,5 +42,5 @@ class MonteCarloPlayer:
             best_move = max(move_scores, key=move_scores.get)
         else:
             best_move = min(move_scores, key=move_scores.get)
-        
+        print(move_scores)
         return best_move
