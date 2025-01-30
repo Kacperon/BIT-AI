@@ -16,10 +16,10 @@ def start_game(n: int) -> list:
         game[n-2][n-2] = (2, 1)
     return game
 
-def get_valid_moves(tab: list) -> list:
+def get_valid_moves(tab: list,player: int) -> list:
     "return a list of valid moves for the current player"
     Game=Game_class(0)
-    Game.import_game(tab,1)
+    Game.import_game(tab,player)
     return Game.get_position()[Game.current_player-1]
 
 def make_move(tab: list, move: tuple, player) -> tuple[list, int]:
