@@ -1,8 +1,9 @@
 import class444 as c
 from minmax import MinimaxPlayer
-
+from app import start_game
 if __name__ == "__main__":
-    game = c.Game_class(4)
+    game = c.Game_class(0)
+    game.import_game(start_game(4), 1)
     player1 = MinimaxPlayer(depth=2)
     while True:
         if game.get_position()[0] == []:

@@ -8,7 +8,7 @@ def start_game(n: int) -> list:
     "return the map of the game as a list of lists of triples"
     "where first element is a player number and the second contains card value"
     game = [[None for _ in range(n)] for _ in range(n)]
-    if n<3:
+    if n<=4:
         game[0][0] = (1, 1)
         game[n-1][n-1] = (2, 1)
     else:

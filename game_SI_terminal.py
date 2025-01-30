@@ -3,10 +3,13 @@ from minmax import MinimaxPlayer
 from minmax_alfa_beta import MinimaxabPlayer
 from monte_carlo import MonteCarloPlayer
 from monte_carlo_time import MonteCarloPlayer as MonteCarlotPlayer
+from app import start_game
 
 
 if __name__ == "__main__":
     game = c.Game_class(4)
+    game.import_game(start_game(5),1)
+
     player1 = MinimaxabPlayer(depth=0)
     player2 = MonteCarlotPlayer(2)
     #player2 = MinimaxPlayer(depth=3)
