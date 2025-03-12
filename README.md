@@ -1,77 +1,77 @@
 # FastAPI Game API
 
-## Opis
+## Description
 
-Jest to API stworzone przy użyciu FastAPI, które implementuje mechanikę gry planszowej z obsługą różnych algorytmów AI, takich jak Minimax i Monte Carlo.
+This is an API built using FastAPI that implements board game mechanics with support for various AI algorithms, such as Minimax and Monte Carlo.
 
-## Instalacja
+## Installation
 
-Aby uruchomić API, należy zainstalować wymagane zależności:
+To run the API, install the required dependencies:
 
 ```bash
 pip install fastapi uvicorn
 ```
 
-Następnie można uruchomić serwer za pomocą:
+Then, start the server with:
 
 ```bash
 uvicorn main:app --reload
 ```
 
-## Endpointy
+## Endpoints
 
 ### 1. `POST /start_game`
-**Opis**: Inicjalizuje nową grę.
+**Description**: Initializes a new game.
 
-**Parametry**:
-- `n` (int) - Rozmiar planszy.
+**Parameters**:
+- `n` (int) - Board size.
 
-**Zwraca**:
-- `game` (list) - Stan początkowy gry.
+**Returns**:
+- `game` (list) - Initial game state.
 
 ### 2. `POST /get_valid_moves`
-**Opis**: Zwraca listę możliwych ruchów dla gracza.
+**Description**: Returns a list of valid moves for the player.
 
-**Parametry**:
-- `tab` (list) - Aktualny stan gry.
-- `player` (int) - Numer gracza.
+**Parameters**:
+- `tab` (list) - Current game state.
+- `player` (int) - Player number.
 
-**Zwraca**:
-- `valid_moves` (list) - Lista dostępnych ruchów.
+**Returns**:
+- `valid_moves` (list) - List of available moves.
 
 ### 3. `POST /make_move`
-**Opis**: Wykonuje ruch gracza.
+**Description**: Makes a move for the player.
 
-**Parametry**:
-- `tab` (list) - Aktualny stan gry.
-- `move` (tuple) - Wykonywany ruch.
-- `player` (int) - Numer gracza.
+**Parameters**:
+- `tab` (list) - Current game state.
+- `move` (tuple) - Move to be made.
+- `player` (int) - Player number.
 
-**Zwraca**:
-- `new_game_state` (list) - Nowy stan gry.
-- `winner` (int) - Numer zwycięzcy lub 0, jeśli gra trwa.
+**Returns**:
+- `new_game_state` (list) - Updated game state.
+- `winner` (int) - Winner number or 0 if the game is still ongoing.
 
 ### 4. `POST /generate_move_minmax`
-**Opis**: Generuje najlepszy ruch dla gracza przy użyciu algorytmu Minimax.
+**Description**: Generates the best move for the player using the Minimax algorithm.
 
-**Parametry**:
-- `game` (list) - Aktualny stan gry.
-- `depth` (int) - Głębokość analizy.
-- `if_alphabeta` (bool) - Czy używać optymalizacji Alfa-Beta.
+**Parameters**:
+- `game` (list) - Current game state.
+- `depth` (int) - Search depth.
+- `if_alphabeta` (bool) - Whether to use Alpha-Beta pruning.
 
-**Zwraca**:
-- `best_move` (tuple) - Najlepszy ruch.
+**Returns**:
+- `best_move` (tuple) - Best move.
 
 ### 5. `POST /generate_move_monte_carlo`
-**Opis**: Generuje najlepszy ruch dla gracza przy użyciu algorytmu Monte Carlo.
+**Description**: Generates the best move for the player using the Monte Carlo algorithm.
 
-**Parametry**:
-- `game` (list) - Aktualny stan gry.
-- `time` (int) - Limit czasu analizy.
+**Parameters**:
+- `game` (list) - Current game state.
+- `time` (int) - Time limit for analysis.
 
-**Zwraca**:
-- `best_move` (tuple) - Najlepszy ruch.
+**Returns**:
+- `best_move` (tuple) - Best move.
 
-## Autor
-Projekt został stworzony w celu demonstracji algorytmów sztucznej inteligencji w grach planszowych. Możesz dostosować go do własnych potrzeb i rozwijać dalej!
+## Author
+This project was created to demonstrate Minimax and Monte Carlo algorithms in the game Clonium.
 
